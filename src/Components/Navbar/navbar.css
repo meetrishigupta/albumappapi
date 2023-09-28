@@ -1,0 +1,41 @@
+.contianer {
+  display: flex;
+  min-width: 100%;
+  min-height: 100px;
+  border: 0px solid #fff;
+  background: rgba(14, 14, 14, 0.24);
+  backdrop-filter: blur(7px);
+}
+.textcontent-logo {
+  width: 50%;
+  color: #f2f2f2;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: -0.48px;
+}
+.textcontent-logo {
+  text-align: left;
+  margin-left: 50px;
+}
+.button-add {
+  justify-content: right;
+}
+.button-add button {
+  position: relative;
+  left: 200px;
+  width: 121px;
+  height: 39px;
+  border-radius: 27px;
+  border: 0px solid #000;
+  background: #b8b8b8;
+  color: #202020;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.3px;
+}
