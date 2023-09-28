@@ -1,0 +1,8 @@
+.album-list {
+  width: 80%;
+  margin: auto;
+  padding-top: 73px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

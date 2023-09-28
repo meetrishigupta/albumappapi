@@ -1,16 +1,19 @@
 import React from "react";
 import "./navbar.css";
-export const Navbar = () => {
+import { Link, NavLink } from "react-router-dom";
+export const Navbar = (props) => {
   return (
-    <>
-      <div className="contianer">
-        <div className="textcontent-logo">
+    <div className="contianer">
+      <div className="textcontent-logo">
+        <Link to="/">
           <p>Albumlist</p>
-        </div>
-        <div className="button-add">
-          <button>Add User</button>
-        </div>
+        </Link>
       </div>
-    </>
+      <div className="button-add">
+        <Link to="/add">
+          <button>Add User</button>
+        </Link>
+      </div>
+    </div>
   );
 };

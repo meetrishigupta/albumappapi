@@ -1,0 +1,64 @@
+.card {
+  width: 262px;
+  height: 10%;
+  border-radius: 50px;
+  background: #ffffffb5;
+  backdrop-filter: blur(17px);
+  padding: 10px;
+
+  margin-bottom: 20px;
+}
+
+.card-text p {
+  color: #493729;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  text-align: left;
+  font-weight: 800;
+  line-height: normal;
+}
+.card-text span {
+  color: #000000;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.func-buttons {
+  display: flex;
+}
+.editicons {
+  color: white;
+  text-align: left;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 20px;
+  width: 43px;
+  height: 43px;
+  background-color: #2cb609;
+}
+
+.editicons svg {
+  position: relative;
+  top: 8px;
+  left: 10px;
+}
+
+.deleteicons {
+  color: white;
+  text-align: left;
+  margin-top: 20px;
+  border-radius: 20px;
+  margin-left: 132px;
+
+  width: 43px;
+  height: 43px;
+  background-color: #ff3f14;
+}
+.deleteicons svg {
+  position: relative;
+  top: 9px;
+  left: 9px;
+}

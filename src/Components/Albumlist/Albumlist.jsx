@@ -1,11 +1,15 @@
 import React from "react";
 import "./album.css";
 import { Navbar } from "../Navbar/navbar";
-export const Albumlist = () => {
+import List from "../List/list";
+export const Albumlist = (props) => {
   return (
     <>
-      <Navbar />
-      <div>Albumlist</div>
+      <div className="album-list">
+        {props.album.map((album) => (
+          <List key={album.id} album={album} />
+        ))}
+      </div>
     </>
   );
 };
