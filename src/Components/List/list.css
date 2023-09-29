@@ -38,6 +38,7 @@
   width: 43px;
   height: 43px;
   background-color: #2cb609;
+  cursor: pointer;
 }
 
 .editicons svg {
@@ -52,7 +53,7 @@
   margin-top: 20px;
   border-radius: 20px;
   margin-left: 132px;
-
+  cursor: pointer;
   width: 43px;
   height: 43px;
   background-color: #ff3f14;

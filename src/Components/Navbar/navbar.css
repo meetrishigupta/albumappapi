@@ -6,6 +6,9 @@
   backdrop-filter: blur(7px);
   align-items: center;
 }
+.textcontent-logo{
+  width: 100%;
+}
 .textcontent-logo a {
   width: 50%;
   color: #f2f2f2;

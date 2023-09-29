@@ -1,10 +1,34 @@
 import React from "react";
-
-const Addalbumlist = () => {
+import "./addAlbumlist.css";
+//addAlbumlistdata
+const Addalbumlist = (props) => {
+  function getDatafrominputfields() {}
   return (
-    <div>
-      <h1>page 2</h1>
-    </div>
+    <body>
+      <div className="page">
+        <div className="outer-box">
+          <h2>Add User to Homepage</h2>
+          <form>
+            <label>
+              <p>User's Name</p>
+            </label>
+            <br />
+            <input required type="text" />
+            <br />
+            <label>
+              <p>User's ID</p>
+            </label>
+            <br />
+            <input required type="number" />
+            <br />
+            <div className="button-container">
+              <p className="back">Back to Homepage</p>
+              <button className="add">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </body>
   );
 };
 

@@ -3,6 +3,9 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import "./list.css";
 const List = (props) => {
+  function handleDelete() {
+    props.deleteAlbumFromList(props.album.id);
+  }
   return (
     <div className="card">
       <div className="card-text">
@@ -18,7 +21,7 @@ const List = (props) => {
           <EditIcon />
         </div>
         <div className="deleteicons">
-          <DeleteIcon />
+          <DeleteIcon onClick={handleDelete} />
         </div>
       </div>
     </div>
