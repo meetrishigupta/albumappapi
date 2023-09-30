@@ -37,12 +37,12 @@ function App() {
     toast.success("Your selected album is deleted from the Album list ");
     setAlbum(newAlbum);
   };
+
   const addAlbumlistdata = (userId, title) => {
     fetch("https://jsonplaceholder.typicode.com/albums", {
       method: "POST",
       body: JSON.stringify({
-        userId: userId,
-        id: albums.length > 0 ? albums[albums.length - 1].id + 1 : 1,
+        id: userId,
         title: title,
       }),
       headers: {
@@ -51,22 +51,67 @@ function App() {
     }).then((response) => response.json());
 
     const newAlbum = {
-      userId: userId,
-      id: albums.length > 0 ? albums[albums.length - 1].id + 1 : 1,
+      id: userId,
       title: title,
     };
 
     setAlbum([...albums, newAlbum]);
     toast.success("New Album added successfully in the bottom!!");
   };
+  const setUpdateAlbum = (album) => {
+    setUpdateAlbum(album);
+  };
 
+  const updateAlbuminList = async (id, updatetitle, updateuserid, oldAlbum) => {
+    let updatedAlbum = [];
+    if (id < 100) {
+      try {
+        const response = await fetch(
+          `https://jsonplaceholder.typicode.com/albums/${id}`,
+          {
+            method: "PUT",
+            body: JSON.stringify({
+              userId: updateuserid,
+              id: id,
+              title: updatetitle,
+            }),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
+          }
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        updatedAlbum = await response.json();
+      } catch (error) {
+        console.error("Error updating album:", error);
+        toast.error("Issue with updating the list");
+      }
+    } else {
+      updatedAlbum = {
+        userId: updateuserid,
+        id: id,
+        title: updatetitle,
+      };
+    }
+    const updatedAlbums = [...albums];
+    const index = updatedAlbums.findIndex((album) => album.id === oldAlbum.id);
+    updatedAlbums[index] = updatedAlbum;
+    setAlbum(updatedAlbums);
+    toast.success("Album is succussfully updated");
+  };
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
         <>
           <Navbar />
-          <Albumlist album={albums} deleteAlbumFromList={deleteUpdateAlbum} />
+          <Albumlist
+            album={albums}
+            setUpdateAlbum={setUpdateAlbum}
+            deleteAlbumFromList={deleteUpdateAlbum}
+          />
         </>
       ),
     },
@@ -84,7 +129,11 @@ function App() {
       element: (
         <>
           <Navbar />
-          <UpdateAlbum />,
+          <UpdateAlbum
+            album={updateAlbum}
+            updateAlbuminList={updateAlbuminList}
+          />
+          ,
         </>
       ),
     },

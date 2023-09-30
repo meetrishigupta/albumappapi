@@ -15,7 +15,9 @@ body::-webkit-scrollbar {
   backdrop-filter: blur(1px);
   padding: 30px;
 }
-
+input::placeholder {
+  color: white;
+}
 h2 {
   color: #f2f2f2;
   font-family: Inter;
