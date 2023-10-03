@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { RouterProvider, createBrowserRouter, Route } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Albumlist } from "./Components/Albumlist/Albumlist";
 import { Navbar } from "./Components/Navbar/navbar";
 import Addalbumlist from "./Components/addAlbumlist/addAlbumlist";
@@ -9,7 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [albums, setAlbum] = useState([]);
-  const [updateAlbum, setUpdateAlbum] = useState({});
+  const [updatesAlbum, setUpdateAlbum] = useState({});
 
   useEffect(() => {
     try {
@@ -58,11 +58,11 @@ function App() {
     setAlbum([...albums, newAlbum]);
     toast.success("New Album added successfully in the bottom!!");
   };
-  // const setUpdateAlbum = (album) => {
-  //   setUpdateAlbum(album);
-  // };
+  const handleSetUpdateAlbum = (album) => {
+    setUpdateAlbum(album);
+  };
 
-  const updateAlbuminList = async (id, updatetitle, updateuserid, oldAlbum) => {
+  const updateAlbuminList = async (id, updatetitle, updateid, oldAlbum) => {
     let updatedAlbum = [];
     if (id < 100) {
       try {
@@ -71,7 +71,7 @@ function App() {
           {
             method: "PUT",
             body: JSON.stringify({
-              userId: updateuserid,
+              userId: updateid,
               id: id,
               title: updatetitle,
             }),
@@ -90,7 +90,7 @@ function App() {
       }
     } else {
       updatedAlbum = {
-        userId: updateuserid,
+        userId: updateid,
         id: id,
         title: updatetitle,
       };
@@ -109,7 +109,7 @@ function App() {
           <Navbar />
           <Albumlist
             album={albums}
-            setUpdateAlbum={setUpdateAlbum}
+            setUpdateAlbum={handleSetUpdateAlbum}
             deleteAlbumFromList={deleteUpdateAlbum}
           />
         </>
@@ -130,7 +130,7 @@ function App() {
         <>
           <Navbar />
           <UpdateAlbum
-            album={updateAlbum}
+            album={updatesAlbum}
             updateAlbuminList={updateAlbuminList}
           />
           ,

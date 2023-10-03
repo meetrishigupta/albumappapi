@@ -13,14 +13,11 @@ const List = (props) => {
         <p>
           User Name: <span>{props.album.title}</span>
         </p>
-        <p>
-          User ID: <span>{props.album.id}</span>{" "}
-        </p>
       </div>
       <div className="func-buttons">
         <Link to="/update">
           <div className="editicons">
-            <EditIcon />
+            <EditIcon onClick={() => props.setUpdateAlbum(props.album)} />
           </div>
         </Link>
         <div className="deleteicons">

@@ -5,15 +5,17 @@ const UpdateAlbum = (props) => {
   const inputuserid = useRef();
   const inputusername = useRef();
 
-  const UpdateListAlbum = () => {
+  const getupdatedata = (e) => {
+    e.preventDefault();
     const id = props.album.id;
     let updatetitle = inputusername.current.value;
     let updateid = inputuserid.current.value;
+    
     if (updatetitle === "") {
       updatetitle = props.album.title;
     }
     if (updateid === "") {
-      updateid = props.album.userId;
+      updateid = props.album.id;
     }
     props.updateAlbuminList(id, updatetitle, Number(updateid), props.album);
   };
@@ -25,6 +27,7 @@ const UpdateAlbum = (props) => {
         <form>
           <label>
             <p>User's Name</p>
+            <p>{props.album.title}</p>
           </label>
           <br />
           <input
@@ -36,10 +39,11 @@ const UpdateAlbum = (props) => {
           <br />
           <label>
             <p>User's ID</p>
+            <p>{props.album.id}</p>
           </label>
           <br />
           <input
-            placeholder={props.album.userId}
+            placeholder={props.album.id}
             ref={inputuserid}
             required
             type="number"
@@ -47,7 +51,7 @@ const UpdateAlbum = (props) => {
           <br />
           <div className="button-container">
             <p className="back">Back to Homepage</p>
-            <button onClick={UpdateListAlbum}>Update</button>
+            <button onClick={getupdatedata}>Update</button>
           </div>
         </form>
       </div>

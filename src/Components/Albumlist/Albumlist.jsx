@@ -11,6 +11,7 @@ export const Albumlist = (props) => {
             key={album.id}
             album={album}
             deleteAlbumFromList={props.deleteAlbumFromList}
+            setUpdateAlbum={props.setUpdateAlbum}
           />
         ))}
       </div>
