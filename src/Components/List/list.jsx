@@ -18,14 +18,14 @@ const List = (props) => {
         </p>
       </div>
       <div className="func-buttons">
-        <div className="editicons">
-          <EditIcon />
-        </div>
         <Link to="/update">
-          <div className="deleteicons">
-            <DeleteIcon onClick={handleDelete} />
+          <div className="editicons">
+            <EditIcon />
           </div>
         </Link>
+        <div className="deleteicons">
+          <DeleteIcon onClick={handleDelete} />
+        </div>
       </div>
     </div>
   );

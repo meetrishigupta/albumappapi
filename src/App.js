@@ -58,9 +58,9 @@ function App() {
     setAlbum([...albums, newAlbum]);
     toast.success("New Album added successfully in the bottom!!");
   };
-  const setUpdateAlbum = (album) => {
-    setUpdateAlbum(album);
-  };
+  // const setUpdateAlbum = (album) => {
+  //   setUpdateAlbum(album);
+  // };
 
   const updateAlbuminList = async (id, updatetitle, updateuserid, oldAlbum) => {
     let updatedAlbum = [];
