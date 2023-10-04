@@ -16,8 +16,11 @@ const List = (props) => {
       </div>
       <div className="func-buttons">
         <Link to="/update">
-          <div className="editicons">
-            <EditIcon onClick={() => props.setUpdateAlbum(props.album)} />
+          <div
+            onClick={() => props.setUpdateAlbum(props.album)}
+            className="editicons"
+          >
+            <EditIcon />
           </div>
         </Link>
         <div className="deleteicons">

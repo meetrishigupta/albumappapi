@@ -10,12 +10,12 @@ const UpdateAlbum = (props) => {
     const id = props.album.id;
     let updatetitle = inputusername.current.value;
     let updateid = inputuserid.current.value;
-    
+
     if (updatetitle === "") {
       updatetitle = props.album.title;
     }
     if (updateid === "") {
-      updateid = props.album.id;
+      updateid = props.album.userId;
     }
     props.updateAlbuminList(id, updatetitle, Number(updateid), props.album);
   };
@@ -39,11 +39,11 @@ const UpdateAlbum = (props) => {
           <br />
           <label>
             <p>User's ID</p>
-            <p>{props.album.id}</p>
+            <p>{props.album.userId}</p>
           </label>
           <br />
           <input
-            placeholder={props.album.id}
+            placeholder={props.album.userId}
             ref={inputuserid}
             required
             type="number"
