@@ -1,9 +1,11 @@
 import React from "react";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit"; //using Material UI Icons
+import DeleteIcon from "@mui/icons-material/Delete"; //using Material UI Icons
 import "./list.css";
 import { Link } from "react-router-dom";
+
 const List = (props) => {
+  //create function for passing the data to prop function
   function handleDelete() {
     props.deleteAlbumFromList(props.album.id);
   }
@@ -17,6 +19,7 @@ const List = (props) => {
       <div className="func-buttons">
         <Link to="/update">
           <div
+            //add event handler onClick passing album prop array to setUpdateAlub state
             onClick={() => props.setUpdateAlbum(props.album)}
             className="editicons"
           >
@@ -24,7 +27,9 @@ const List = (props) => {
           </div>
         </Link>
         <div className="deleteicons">
-          <DeleteIcon onClick={handleDelete} />
+          <DeleteIcon 
+          //add event hanler onCLick passing the handleDelete using syntactic sugar 
+          onClick={handleDelete} />
         </div>
       </div>
     </div>

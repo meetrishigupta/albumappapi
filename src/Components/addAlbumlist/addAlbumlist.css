@@ -1,4 +1,3 @@
-
 .page {
   height: 95vh; /* Set the height to 100% of the viewport height */
   display: flex;
@@ -13,7 +12,6 @@
   backdrop-filter: blur(1px);
   padding: 30px;
 }
-
 h2 {
   color: #f2f2f2;
   font-family: Inter;
@@ -58,7 +56,7 @@ input:focus-visible {
   outline: none;
 }
 
- .add {
+.add {
   border-radius: 27px;
   border: 0px solid #290ba3;
   background: #301fa7;
@@ -92,6 +90,7 @@ p {
 .back {
   cursor: pointer;
   color: #ffffff;
+  text-decoration: none;
   font-family: Inter;
   font-size: 20px;
   font-style: normal;

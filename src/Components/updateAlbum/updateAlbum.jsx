@@ -1,10 +1,12 @@
 import React from "react";
 import "./updateAlbum.css";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 const UpdateAlbum = (props) => {
+  //using useRef() for getting the current value of input field
   const inputuserid = useRef();
   const inputusername = useRef();
-
+  //creating function for getting value into the variable and store into the variable as per condition & passing arguments to the props function
   const getupdatedata = (e) => {
     e.preventDefault();
     const id = props.album.id;
@@ -19,7 +21,6 @@ const UpdateAlbum = (props) => {
     }
     props.updateAlbuminList(id, updatetitle, Number(updateid), props.album);
   };
-  //updateAlbuminList
   return (
     <div className="page">
       <div className="outer-box">
@@ -27,10 +28,10 @@ const UpdateAlbum = (props) => {
         <form>
           <label>
             <p>User's Name</p>
-            <p>{props.album.title}</p>
           </label>
           <br />
           <input
+            // getting value of clicked card
             placeholder={props.album.title}
             ref={inputusername}
             required
@@ -39,10 +40,10 @@ const UpdateAlbum = (props) => {
           <br />
           <label>
             <p>User's ID</p>
-            <p>{props.album.userId}</p>
           </label>
           <br />
           <input
+            // getting value of clicked card
             placeholder={props.album.userId}
             ref={inputuserid}
             required
@@ -50,7 +51,9 @@ const UpdateAlbum = (props) => {
           />
           <br />
           <div className="button-container">
-            <p className="back">Back to Homepage</p>
+            <Link className="back" to="/">
+              <p className="back">Back to Homepage</p>
+            </Link>
             <button onClick={getupdatedata}>Update</button>
           </div>
         </form>
